@@ -6,7 +6,25 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="Db.fs" />
+    <Compile Include="Entities.fs" />
+    <Compile Include="FSharpDataSqlClient.fs" />
+    <Compile Include="LinqToDb.fs" />
+    <Compile Include="DapperFSharp.fs" />
+    <Compile Include="DapperCore.fs" />
     <Compile Include="Program.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BenchmarkDotNet" Version="0.12.1" />
+    <PackageReference Include="Dapper.FSharp" Version="1.5.0" />
+    <PackageReference Include="FSharp.Data.SqlClient" Version="2.0.6" />
+    <PackageReference Include="linq2db" Version="2.9.8" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="FSharp.Core" Version="4.7.1" />
   </ItemGroup>
 
 </Project>
