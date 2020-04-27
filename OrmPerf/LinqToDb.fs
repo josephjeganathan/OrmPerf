@@ -16,15 +16,14 @@ type ConnectionStringSettings(connectionString: string, name: string, providerNa
 let connection : IConnectionStringSettings =
     new ConnectionStringSettings(Db.connectionString, "ContactDb", "SqlServer") :> IConnectionStringSettings
 
-type MySettings() =
+type LinqToDBSettings() =
     interface ILinqToDBSettings with
         member _.DataProviders = Seq.empty
         member _.DefaultConfiguration = "SqlServer"
         member _.DefaultDataProvider = "SqlServer"
         member _.ConnectionStrings = seq { connection }
 
-DataConnection.DefaultSettings <- new MySettings()
-
+DataConnection.DefaultSettings <- new LinqToDBSettings()
 
 let contactMapping (builder: FluentMappingBuilder) =
     builder
