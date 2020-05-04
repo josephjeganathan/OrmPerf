@@ -22,6 +22,9 @@ type DapperBenchMark() =
     [<Benchmark>]
     member _.SqlClientTypeProviderSingle() = FSharpDataSqlClient.querySingleItem() |> ignore
 
+    [<Benchmark>]
+    member _.SqlProviderSingle() = FsSqlProvider.querySingleItem() |> ignore
+
     // Join
 
     [<Benchmark>]
@@ -35,6 +38,9 @@ type DapperBenchMark() =
 
     [<Benchmark>]
     member _.SqlClientTypeProviderJoin() = FSharpDataSqlClient.queryWithJoin() |> ignore
+
+    [<Benchmark>]
+    member _.SqlProviderJoin() = FsSqlProvider.queryWithJoin() |> ignore
 
 [<EntryPoint>]
 let main _ =
