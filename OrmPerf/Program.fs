@@ -25,6 +25,9 @@ type DapperBenchMark() =
     [<Benchmark>]
     member _.SqlProviderSingle() = FsSqlProvider.querySingleItem() |> ignore
 
+    [<Benchmark>]
+    member _.EntityFrameworkCoreSingle() = EntityFrameworkCore.querySingleItem() |> ignore
+
     // Join
 
     [<Benchmark>]
@@ -41,6 +44,9 @@ type DapperBenchMark() =
 
     [<Benchmark>]
     member _.SqlProviderJoin() = FsSqlProvider.queryWithJoin() |> ignore
+
+    [<Benchmark>]
+    member _.EntityFrameworkCoreJoin() = EntityFrameworkCore.queryWithJoin() |> ignore
 
 [<EntryPoint>]
 let main _ =
