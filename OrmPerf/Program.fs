@@ -3,7 +3,6 @@ open BenchmarkDotNet.Attributes
 open BenchmarkDotNet.Running
 open BenchmarkDotNet.Engines
 
-
 [<SimpleJob(RunStrategy.Monitoring, launchCount = 3, warmupCount = 10, targetCount = 20)>]
 [<MinColumn; MaxColumn; MeanColumn; MedianColumn>]
 type DapperBenchMark() =
@@ -28,6 +27,9 @@ type DapperBenchMark() =
     [<Benchmark>]
     member _.EntityFrameworkCoreSingle() = EntityFrameworkCore.querySingleItem() |> ignore
 
+    [<Benchmark>]
+    member _.EntityFrameworkSingle() = EF6.querySingleItem() |> ignore
+
     // Join
 
     [<Benchmark>]
@@ -47,6 +49,9 @@ type DapperBenchMark() =
 
     [<Benchmark>]
     member _.EntityFrameworkCoreJoin() = EntityFrameworkCore.queryWithJoin() |> ignore
+
+    [<Benchmark>]
+    member _.EntityFrameworkJoin() = EF6.queryWithJoin() |> ignore
 
 [<EntryPoint>]
 let main _ =

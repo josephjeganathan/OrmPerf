@@ -10,6 +10,7 @@
     <Compile Include="Entities.fs" />
     <Compile Include="FSharpDataSqlClient.fs" />
     <Compile Include="LinqToDb.fs" />
+    <Compile Include="EntityFramework.fs" />
     <Compile Include="EntityFrameworkCore.fs" />
     <Compile Include="DapperFSharp.fs" />
     <Compile Include="DapperCore.fs" />
@@ -20,6 +21,7 @@
   <ItemGroup>
     <PackageReference Include="BenchmarkDotNet" Version="0.12.1" />
     <PackageReference Include="Dapper.FSharp" Version="1.5.0" />
+    <PackageReference Include="EntityFramework" Version="6.4.0" />
     <PackageReference Include="FSharp.Data.SqlClient" Version="2.0.6" />
     <PackageReference Include="linq2db" Version="2.9.8" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.3" />
