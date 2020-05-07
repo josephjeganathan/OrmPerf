@@ -2,6 +2,17 @@
 
 Tested Performance between ORM, results
 
+```
+BenchmarkDotNet=v0.12.1, OS=Windows 10.0.17763.1158 (1809/October2018Update/Redstone5)
+Intel Core i9-8950HK CPU 2.90GHz (Coffee Lake), 1 CPU, 6 logical and 6 physical cores
+.NET Core SDK=3.1.201
+  [Host]     : .NET Core 3.1.3 (CoreCLR 4.700.20.11803, CoreFX 4.700.20.12001), X64 RyuJIT DEBUG
+  Job-WVBJJX : .NET Core 3.1.3 (CoreCLR 4.700.20.11803, CoreFX 4.700.20.12001), X64 RyuJIT
+
+IterationCount=20  LaunchCount=3  RunStrategy=Monitoring
+WarmupCount=10
+```
+
 |                      Method |       Mean |       Error |      StdDev |     Median |        Min |         Max |
 |---------------------------- |-----------:|------------:|------------:|-----------:|-----------:|------------:|
 |                DapperSingle |   527.1 us |    92.38 us |   206.63 us |   499.9 us |   238.4 us |  1,087.7 us |
