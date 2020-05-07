@@ -3,13 +3,13 @@
 open FSharp.Data
 
 [<Literal>]
-let querySingle = "SELECT * FROM Contact WHERE Id = 1"
+let querySingle = "SELECT * FROM Contact WHERE Id = @Id"
 
 let querySingleItem() =
 
     use cmd = new SqlCommandProvider<querySingle, Db.connectionString, ResultType.Tuples>(Db.connectionString)
 
-    cmd.Execute() |> Seq.head
+    cmd.Execute(Id = 1) |> Seq.head
 
 [<Literal>]
 let query = """
